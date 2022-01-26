@@ -1,0 +1,142 @@
+.ingredient {
+  float: left;
+  width: 100%;
+}
+.headerRecette {
+  margin-bottom: 30px;
+}
+.headerRecette .headerContainer {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid lightgrey;
+  margin-left: 10px;
+  display: inline-flex;
+  white-space: nowrap;
+}
+.headerRecette .sentence {
+  display: inline;
+  height: 36px;
+  line-height: 36px;
+  vertical-align: top;
+  padding: 0px 3px;
+}
+.headerRecette input[type="text"],
+.ingredient input[type="text"] {
+  width: auto;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  background-color: #fde9e0;
+}
+.headerRecette > span {
+  display: inline;
+}
+.ingredient > span {
+  display: inline-block;
+}
+
+.ingredient .plus {
+  padding: 0px 10px;
+  background-color: blue;
+  border: 1px solid blue;
+  border-radius: 4px;
+  color: white;
+  font-size: 31px;
+  vertical-align: bottom;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+.ingredient .plus:hover {
+  color: blue;
+  background-color: white;
+}
+
+.inputIngredient {
+  float: left;
+  width: 592px;
+  padding: 0px 10px;
+}
+.listIngredient {
+  float: left;
+  width: calc(100% - 612px);
+}
+
+.addStep {
+  width: 534px;
+  height: 200px;
+  border-color: grey;
+  border-radius: 4px;
+  background-color: #fde9e0;
+}
+.coquille {
+  background-color: #fde9e0;
+}
+.addStep + button {
+  vertical-align: top !important;
+}
+
+.step {
+  margin-top: 20px;
+}
+.listIngredientItem fieldset {
+  background-color: white;
+}
+.listIngredientItem span {
+  margin-left: 5px;
+}
+.listStepItem fieldset {
+  background-color: white;
+}
+.listIngredientItem .item {
+  float: left;
+  width: 50%;
+}
+.bold {
+  font-weight: bold;
+}
+
+.listStepItem legend,
+.listIngredientItem legend {
+  font-weight: bold;
+}
+
+.listStepItem .number {
+  position: absolute;
+  font-weight: bold;
+}
+
+.listStepItem .desc {
+  margin-left: 30px;
+  width: 500px;
+}
+
+.stepContainer {
+  position: relative;
+  margin-top: 10px;
+}
+
+.container {
+  margin: 0px auto;
+  width: 1200px;
+  background-color: white;
+  border-radius: 4px;
+  display: flow-root;
+  padding: 30px;
+  min-height: calc(100% - 77px);
+  border: 1px solid lightgrey;
+}
+
+.headerRecette {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  width: 500px !important;
+}
