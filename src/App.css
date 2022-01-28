@@ -38,7 +38,7 @@
 }
 
 nav + div {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #ededed;
   padding-top: 10px;
   float: left;
   width: 100%;

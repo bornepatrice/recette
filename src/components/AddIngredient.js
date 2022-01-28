@@ -3,6 +3,7 @@ import Select from "react-select";
 import styles from "../css/recette.module.css";
 import { useDispatch } from "react-redux";
 import { ADD_ING } from "../actions/ingredient";
+import { customStyles } from "../common/selectStyles";
 const AddIngredient = () => {
   const options = [
     { value: "Kg", label: "Kg" },
@@ -28,21 +29,6 @@ const AddIngredient = () => {
     setQty("");
     setName("");
   };
-  const customStyles = {
-    valueContainer: (provided, state) => {
-      return {
-        ...provided,
-        border: "1px solid lightgrey;",
-        backgroundColor: "#fde9e0",
-        width: "136px",
-      };
-    },
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isFocused ? "#fde9e0" : "white",
-      color: "black",
-    }),
-  };
   return (
     <div className={styles.ingredient}>
       <input
@@ -62,7 +48,7 @@ const AddIngredient = () => {
           options={options}
           value={unit}
           onChange={(e) => setUnit(e)}
-          styles={customStyles}
+          styles={customStyles("136px")}
         />
       </span>
       <button className={styles.plus} onClick={handleAddIng}>

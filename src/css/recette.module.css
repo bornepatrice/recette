@@ -8,7 +8,6 @@
 .headerRecette .headerContainer {
   background-color: white;
   border-radius: 4px;
-  border: 1px solid lightgrey;
   margin-left: 10px;
   display: inline-flex;
   white-space: nowrap;
@@ -30,7 +29,7 @@
   padding-bottom: 4px;
   border: 1px solid grey;
   border-radius: 4px;
-  background-color: #fde9e0;
+  background-color: rgba(253, 233, 224, 0.5);
 }
 .headerRecette > span {
   display: inline;
@@ -67,14 +66,14 @@
 }
 
 .addStep {
-  width: 534px;
+  width: 535px;
   height: 200px;
   border-color: grey;
   border-radius: 4px;
-  background-color: #fde9e0;
+  background-color: rgba(253, 233, 224, 0.5);
 }
 .coquille {
-  background-color: #fde9e0;
+  background-color: rgba(253, 233, 224, 0.5);
 }
 .addStep + button {
   vertical-align: top !important;
@@ -139,4 +138,25 @@
 
 .title {
   width: 500px !important;
+}
+
+.save {
+  padding: 10px;
+  width: 240px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  float: right;
+  border-radius: 4px;
+  transition: all 300ms ease-out;
+  border: 1px solid blue;
+  cursor: pointer;
+}
+.save:hover {
+  background-color: white;
+  color: blue;
+}
+.save:disabled {
+  opacity: 0.6;
+  font-style: italic;
 }

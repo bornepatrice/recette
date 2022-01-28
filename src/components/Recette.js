@@ -5,6 +5,8 @@ import styles from "../css/recette.module.css";
 import AddStep from "./AddStep";
 import ListStep from "./ListeStep";
 import Select from "react-select";
+import { useSelector } from "react-redux";
+import { customStyles } from "../common/selectStyles";
 
 const Recette = () => {
   const [title, setTitle] = useState("");
@@ -17,6 +19,19 @@ const Recette = () => {
     { value: "5", label: "5" },
     { value: "6", label: "6" },
   ];
+  const ing = useSelector((state) => state.ingredient);
+  const steps = useSelector((state) => state.steps);
+
+  const saveRecette = function () {
+    let recette = {
+      title: title,
+      nbPersonne: +nb.value,
+      ingredients: ing,
+      steps: steps,
+    };
+    console.log(recette);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.headerRecette}>
@@ -30,18 +45,32 @@ const Recette = () => {
         <div className={styles.headerContainer}>
           <span className={styles.sentence}>Pour</span>
           <span>
-            <Select options={options} value={nb} onChange={(e) => setNb(e)} />
+            <Select
+              options={options}
+              value={nb}
+              onChange={(e) => setNb(e)}
+              styles={customStyles()}
+            />
           </span>
           <span className={styles.sentence}>personnes</span>
         </div>
+        <button
+          onClick={(e) => saveRecette()}
+          disabled={
+            ing.length === 0 || steps.length === 0 || title.trim() === ""
+          }
+          className={styles.save}
+        >
+          Sauvegarder
+        </button>
       </div>
       <div className={styles.inputIngredient}>
         <AddIngredient />
         <AddStep />
       </div>
       <div className={styles.listIngredient}>
-        <ListIngredient />
-        <ListStep />
+        <ListIngredient ing={ing} />
+        <ListStep steps={steps} />
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
 import { nanoid } from "nanoid";
 import React from "react";
-import { useSelector } from "react-redux";
+import nl2br from "react-nl2br";
 import styles from "../css/recette.module.css";
 
-const ListStep = () => {
-  const steps = useSelector((state) => state.steps);
+const ListStep = ({ steps }) => {
   return (
     <div className={styles.listStepItem}>
       <fieldset>
@@ -13,7 +12,7 @@ const ListStep = () => {
           return (
             <div key={nanoid()} className={styles.stepContainer}>
               <div className={styles.number}>{item.id}</div>
-              <div className={styles.desc}>{item.description}</div>
+              <div className={styles.desc}>{nl2br(item.description)}</div>
             </div>
           );
         })}

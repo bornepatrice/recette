@@ -1,11 +1,8 @@
 import { nanoid } from "nanoid";
 import React from "react";
-import { useSelector } from "react-redux";
 import styles from "../css/recette.module.css";
 
-const ListIngredient = () => {
-  const ing = useSelector((state) => state.ingredient);
-  console.log(ing);
+const ListIngredient = ({ ing }) => {
   return (
     <div className={styles.listIngredientItem}>
       <fieldset>
