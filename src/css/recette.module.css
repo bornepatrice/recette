@@ -21,7 +21,6 @@
 }
 .headerRecette input[type="text"],
 .ingredient input[type="text"] {
-  width: auto;
   display: inline-block;
   height: 24px;
   line-height: 24px;
