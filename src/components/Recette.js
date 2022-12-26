@@ -7,6 +7,8 @@ import ListStep from "./ListeStep";
 import Select from "react-select";
 import { useSelector } from "react-redux";
 import { customStyles } from "../common/selectStyles";
+import axios from "axios";
+import { Container, TextField } from "@mui/material";
 
 const Recette = () => {
   const [title, setTitle] = useState("");
@@ -30,12 +32,19 @@ const Recette = () => {
       steps: steps,
     };
     console.log(recette);
+    axios
+      .post("http://localhost:3001/recette", recette)
+      .then(function (response) {})
+      .catch(function (e) {
+        console.log(e);
+      })
+      .finally(function () {});
   };
 
   return (
-    <div className={styles.container}>
+    <Container maxWidth="lg" sx={{ backgroundColor: "white", height: "100%" }}>
       <div className={styles.headerRecette}>
-        <input
+        <TextField
           type="text"
           value={title}
           className={styles.title}
@@ -72,7 +81,7 @@ const Recette = () => {
         <ListIngredient ing={ing} />
         <ListStep steps={steps} />
       </div>
-    </div>
+    </Container>
   );
 };
 
